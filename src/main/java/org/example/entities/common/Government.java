@@ -1,9 +1,9 @@
-package org.example.entities.system;
+package org.example.entities.common;
 
 import lombok.Builder;
 
 @Builder
-public record State(
+public record Government(
         Long id,
         String name
 ) {

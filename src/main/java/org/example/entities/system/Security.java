@@ -1,6 +1,9 @@
 package org.example.entities.system;
 
-public record Government(
+import lombok.Builder;
+
+@Builder
+public record Security(
         Long id,
         String name
 ) {

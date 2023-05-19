@@ -15,9 +15,37 @@
  */
 package org.example;
 
-public class App {
+import org.example.entities.Listing;
+import org.example.processors.SystemProcessor;
 
-    public String hello(String name) {
-        return "Hello, " + name;
+import java.io.File;
+import java.time.LocalDateTime;
+import java.util.Date;
+
+public class App {
+    public static void main(String[] args) {
+        //String entityType = args[1];
+        
+        File input = new File("/home/kal/ReferenceHub/EDDB2 Data/Test/one.json");
+        File output = new File("/home/kal/ReferenceHub/EDDB2 Data/Test/output.csv");
+        
+        SystemProcessor.process(input, output);
+        
+        Listing temp = Listing.builder()
+                .id(40921806L)
+                .station_id(1L)
+                .commodity_id(360L)
+                .supply(0)
+                .supply_bracket(0)
+                .buy_price(0)
+                .sell_price(3703)
+                .demand(7)
+                .demand_bracket(3)
+                .collected_at(new Date(1596986551L * 1000))
+                .build();
+        
+        System.out.println(temp.collected_at());
+        
+        
     }
 }
